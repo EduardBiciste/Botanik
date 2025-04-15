@@ -1,0 +1,13 @@
+document.querySelectorAll('.cutout').forEach(cutout => {
+  const sound = new Audio(cutout.getAttribute('data-sound'));
+
+  cutout.addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+  });
+
+  cutout.addEventListener('mouseleave', () => {
+    sound.pause();
+    sound.currentTime = 0;
+  });
+});
